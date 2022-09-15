@@ -1,6 +1,7 @@
 import React from 'react'
-import { useContext, useState } from 'react';
+import { useContext, useState, useRef } from 'react';
 import { UserContext } from '../context/UserContext';
+import Tabledeneme from "../Components/Tabledeneme"
 
 function ContentItem() {
     // const {enteredMount, setEnteredMount} = useContext(UserContext)
@@ -12,6 +13,15 @@ function ContentItem() {
     const {isTrue, setIsTrue} = useContext(UserContext)
     const {isTable, setIsTable} = useContext(UserContext)
      
+    const ref = useRef();
+
+    const calis = () => {(ref.current.addTable())}
+
+    const testtest = () => {
+      setIsTable(true)
+      calis()
+      
+    }
 
   return (
     < >{isTrue ? (
@@ -78,7 +88,7 @@ function ContentItem() {
                    type="submit"
                    value="HESAPLA"
                    className='calculate-submit'
-                   onClick={()=> setIsTable(true)}                                   
+                   onClick={testtest}                                   
                 />            
             </div>
               </div>
@@ -90,7 +100,7 @@ function ContentItem() {
       ) : (
         ""
       )}
-      
+      <Tabledeneme ref = {ref}/>      
     </>
     
   )

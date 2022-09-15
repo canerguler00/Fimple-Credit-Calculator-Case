@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useImperativeHandle, forwardRef } from "react";
 import { useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
 
-function Tabledeneme() {
+const Tabledeneme = forwardRef((props, ref) => {
+  useImperativeHandle(ref,()=>({
+    addTable
+  }))
+
   const [createTable, setCreateTable] = useState([     
         <tr>
           <th>Taksit No</th>
@@ -26,6 +30,7 @@ function Tabledeneme() {
   const { isTable, setIsTable } = useContext(UserContext);
 
   const addTable = () => {
+  
    
     let mainAmount = 20000;
     let amountStyle = 100;
@@ -87,7 +92,7 @@ function Tabledeneme() {
   };
   return (
     <div>
-      <button onClick={(e) => addTable(e)}>BUTTON</button>
+      {/* <button onClick={(e) => addTable(e)}>BUTTON</button> */}
       
       {isTable ? (
         <div className="table-content">
@@ -101,6 +106,6 @@ function Tabledeneme() {
       )}
     </div>
   );
-}
+})
 
 export default Tabledeneme;

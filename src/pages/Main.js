@@ -2,7 +2,7 @@ import React from 'react'
 import Content from '../Components/Content'
 import ContentItem from '../Components/ContentItem'
 import Table from '../Components/Table'
-import Tabledeneme from '../Components/Tabledeneme'
+// import Tabledeneme from '../Components/Tabledeneme'
 
 
 function Main() {
@@ -11,7 +11,7 @@ function Main() {
         <Content />
         <ContentItem /> 
         <Table />  
-        <Tabledeneme />     
+        {/* <Tabledeneme />      */}
     </main>
   )
 }
