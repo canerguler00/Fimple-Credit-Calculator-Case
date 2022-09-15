@@ -15,9 +15,9 @@ function ContentItem() {
 
   return (
     < >{isTrue ? (
-        <div >
-          {creditData.map((item) => (            
-            <div key={item.id} className='content-item'>                
+        <div className='content-staff'>
+          {creditData.map((item, index) => (            
+            <div key={index} className='content-item'>                
               <div className='content-card'>
               <h3 className='content-h3'>Kredi tutarı</h3>
               <h2 className='content-h2'>
