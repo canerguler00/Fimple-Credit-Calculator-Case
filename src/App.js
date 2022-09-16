@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { UserContext } from './context/UserContext';
 import { ThemeContext } from './context/ThemeContext';
 
+
 function App() {
   const [enteredMount, setEnteredMount] = useState("");
   const [enteredMonths, setEnteredMonths] = useState("");
@@ -23,6 +24,7 @@ function App() {
   return (
     <div className="App" id={theme}>
       <ThemeContext.Provider value={{theme, setTheme, toggleTheme}}>
+        
         <UserContext.Provider value={{enteredMount, setEnteredMount, 
                                       enteredMonths, setEnteredMonths, 
                                       enteredInterestRate, setEnteredInterestRate,
@@ -33,8 +35,11 @@ function App() {
                                       isTable, setIsTable
                                     }
            }> 
-          <Layout />
+           
+             <Layout />
+         
         </UserContext.Provider>
+        
       </ThemeContext.Provider>      
     </div>
   );

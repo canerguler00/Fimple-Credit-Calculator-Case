@@ -165,6 +165,7 @@ td, th {
   background-color: white;
   margin: 10px 25px;
   padding: 10px 0;
+  border-radius: 5px;
 }
 .toggle{
   display: flex;
@@ -173,5 +174,13 @@ td, th {
 }
 .switch-span{
   margin-right: 7px;
+}
+.underline{
+  border-top: 2px solid black;
+  width: 500px;
+  height: 5px;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 

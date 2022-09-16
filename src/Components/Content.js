@@ -2,7 +2,6 @@ import React from 'react'
 import { useContext } from 'react';
 import { UserContext } from '../context/UserContext';
 
-
 function Content() {
 
   const {enteredMount, setEnteredMount} = useContext(UserContext)
@@ -26,8 +25,13 @@ function Content() {
             id: Math.random().toString()           
           },
         ];
-      }); 
-      setIsTrue(true)   
+      });
+      if(enteredMount && enteredMonths && enteredInterestRate ){
+        setIsTrue(true) 
+      } 
+      else {
+        alert("Kredi Tutarı, Kredi Vadesi ve Faiz Oranları alanı boş bırakılamaz.")       
+      }        
   }    
 
   return (
@@ -45,6 +49,7 @@ function Content() {
                         placeholder='Kredi Tutarı (TL)'
                         required
                         onChange={(e)=> setEnteredMount(e.target.value)}
+                       
                     />
                 </div>
             </div>
@@ -117,4 +122,4 @@ function Content() {
   )
 }
 
-export default Content
+export default Content;
