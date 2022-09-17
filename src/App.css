@@ -9,6 +9,7 @@ html {
 body {
   min-height: 100vh;
 }
+/* navbar component start */
 .navbar {
   width: 100%;  
   background-color: black;
@@ -22,12 +23,22 @@ body {
 .nav-item{
   display: flex;
 }
-.main {
-  width: 100%;
-  min-height: 550px;
+.toggle{
+  display: flex;
+  justify-content: center;
   align-items: center;
-  overflow-y: auto;
 }
+.switch-span{
+  margin-right: 7px;
+}
+#dark{
+  background-color: rgb(56, 51, 51);
+}
+#light{
+  background-color: white;
+}
+/* navbar component end */
+/* footer component start */
 .footer {
   width: 100%;
   padding: 0.2em;
@@ -35,11 +46,15 @@ body {
   color: aliceblue;
   display: grid;
   place-content: center;
-  margin-top: 30px;  
-  
+  margin-top: 30px;    
 }
-footer-info{
-  float: right;
+/* footer component end */
+/* main component start */
+.main {
+  width: 100%;
+  min-height: 550px;
+  align-items: center;
+  overflow-y: auto;
 }
 .content{
   display: flex;
@@ -58,7 +73,6 @@ footer-info{
   font-size: 35px;
   font-weight: 500;
 }
-
 .form-item{
   display: flex;
   align-items: center;
@@ -92,7 +106,6 @@ footer-info{
 .calculate-submit value{
   text-align: center;
 }
-
 .form-input input, .form-submit-input{
   width: 200px;
   border-radius: 4px;
@@ -114,13 +127,10 @@ footer-info{
   margin-right: auto;
   width: 400px;
   height: 400px;
-  /* text-align: center; */
   border: 1 px solid black;
   margin-top: 20px;
-  margin-bottom: 150px;
-  
+  margin-bottom: 150px;  
 }
-
 .content-h3{
   font-size: 22px;
   padding: 5px 0;
@@ -146,8 +156,7 @@ table {
   border-collapse: collapse;
   width: 90%;
   margin-left: auto;
-  margin-right: auto;
-  
+  margin-right: auto;  
 }
 td, th {
   border: 1px solid #dddddd;
@@ -155,25 +164,11 @@ td, th {
   padding: 8px;
   text-align: center;  
 }
-#dark{
-  background-color: rgb(56, 51, 51);
-}
-#light{
-  background-color: white;
-}
 .table-content{
   background-color: white;
   margin: 10px 25px;
   padding: 10px 0;
   border-radius: 5px;
-}
-.toggle{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.switch-span{
-  margin-right: 7px;
 }
 .underline{
   border-top: 2px solid black;
@@ -181,6 +176,6 @@ td, th {
   height: 5px;
   margin-left: auto;
   margin-right: auto;
-
 }
+/* main component end */
 

@@ -7,6 +7,7 @@ const Table = forwardRef((props, ref) => {
     addTable
   }))
 
+  // create table array state 
   const [createTable, setCreateTable] = useState([  
       <thead> 
         <tr>
@@ -20,47 +21,47 @@ const Table = forwardRef((props, ref) => {
         </tr> 
       </thead>     
   ]);
-  const [newInterest, setNewInterest] = useState();
-  const [reduction, setReduction] = useState();
-  const [newPrincipal, setNewPrincipal] = useState();
+  
 
-  const { enteredMount, setEnteredMount } = useContext(UserContext);
-  const { enteredMonths, setEnteredMonths } = useContext(UserContext);
-  const { enteredInterestRate, setEnteredInterestRate } = useContext(UserContext);
-  const { enteredBsmv, setEnteredBsmv } = useContext(UserContext);
-  const { enteredKkdf, setEnteredKkdf } = useContext(UserContext);
-  const { isTable, setIsTable } = useContext(UserContext);
+  const { enteredMount } = useContext(UserContext);
+  const { enteredMonths } = useContext(UserContext);
+  const { enteredInterestRate } = useContext(UserContext);
+  const { enteredBsmv } = useContext(UserContext);
+  const { enteredKkdf } = useContext(UserContext);
+  const { isTable } = useContext(UserContext);  
 
-  const addTable = () => {   
-    
+  // this function used in ContentItem component used useRef 
+  const addTable = () => {     
+
     let paymentMonthly = parseFloat(
       (enteredMount *((enteredInterestRate / 100) * (1 + enteredKkdf / 100 + enteredBsmv / 100))) /
         (1 - 1 / Math.pow(1 + (enteredInterestRate / 100) * (1 + enteredKkdf / 100 + enteredBsmv / 100),
          enteredMonths))).toFixed(2)
          ;
     
-    let mainAmount = enteredMount
+    let remainderMainAmount = enteredMount
 
     for (let i = 1; i <= enteredMonths; i++) {      
            
-      let faiz_oranı = enteredInterestRate   
+      let interestRate = enteredInterestRate   
       let bsmv = enteredBsmv / 100
       let kkdf = enteredKkdf / 100
-      let interest = Number((mainAmount * (faiz_oranı/100)).toFixed(2))    
+      let interest = Number((remainderMainAmount * (interestRate/100)).toFixed(2))    
       let bsmvEl = Number((interest * bsmv).toFixed(2));    
       let kkdfEl = Number((interest * kkdf).toFixed(2));
-      let anapara = ((Number(paymentMonthly)) -(((interest + bsmvEl + kkdfEl)))).toFixed(2)
-      mainAmount = (mainAmount - anapara).toFixed(2) 
-      const deg = mainAmount      
+      let mainAmount = ((Number(paymentMonthly)) -(((interest + bsmvEl + kkdfEl)))).toFixed(2)
+      remainderMainAmount = (remainderMainAmount - mainAmount).toFixed(2) 
+      const value = remainderMainAmount      
 
+      // add row for table array state
       setCreateTable((createTable) => [
         ...createTable,
        
-        <tr key={i.toString()}>
+        <tr key={i}>
           <td>{i}</td>
           <td>{paymentMonthly}</td>
-          <td>{anapara}</td>
-          <td>{deg}</td>          
+          <td>{mainAmount}</td>
+          <td>{value}</td>          
           <td>{interest}</td>
           <td>{kkdfEl}</td>
           <td>{bsmvEl}</td>
@@ -68,11 +69,12 @@ const Table = forwardRef((props, ref) => {
       ]);
     }
     return setCreateTable;
-  };
+  }
+
   return (
-    <div>    
-      
-      {isTable ? (
+    <div>      
+      {isTable ? 
+      (
         <div className="table-content">
           <h3 className="table-title">GERİ ÖDEME PLANI TABLOSU</h3>
           <div className="underline"></div>
@@ -80,7 +82,9 @@ const Table = forwardRef((props, ref) => {
           {createTable}
           </table>
         </div>
-      ) : (
+      ) 
+      : 
+      (
         <></>
       )}
     </div>

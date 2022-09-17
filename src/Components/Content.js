@@ -3,15 +3,16 @@ import { useContext } from 'react';
 import { UserContext } from '../context/UserContext';
 
 function Content() {
-
+    // state management used user input value here; from UserContext
   const {enteredMount, setEnteredMount} = useContext(UserContext)
   const {enteredMonths, setEnteredMonths} = useContext(UserContext)
   const {enteredInterestRate, setEnteredInterestRate} = useContext(UserContext)
   const {enteredBsmv, setEnteredBsmv} = useContext(UserContext)
   const {enteredKkdf, setEnteredKkdf} = useContext(UserContext)
-  const {creditData, setCreditData} = useContext(UserContext)
-  const {isTrue, setIsTrue} = useContext(UserContext)  
+  const { setCreditData} = useContext(UserContext)
+  const { setIsTrue} = useContext(UserContext)  
 
+//  input value form submit function; value keeping in creditData state
   const formSubmit = (e) => {
     e.preventDefault(); 
     setCreditData(() => {
@@ -26,6 +27,7 @@ function Content() {
           },
         ];
       });
+    //   input validation here
       if(enteredMount && enteredMonths && enteredInterestRate ){
         setIsTrue(true) 
       } 
@@ -48,8 +50,7 @@ function Content() {
                         name='kredi-tutar' 
                         placeholder='Kredi Tutarı (TL)'
                         required
-                        onChange={(e)=> setEnteredMount(e.target.value)}
-                       
+                        onChange={(e)=> setEnteredMount(e.target.value)}                       
                     />
                 </div>
             </div>
