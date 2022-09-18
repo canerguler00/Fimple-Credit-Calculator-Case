@@ -78,7 +78,8 @@ const Table = forwardRef((props, ref) => {
         <div className="table-content">
           <h3 className="table-title">GERİ ÖDEME PLANI TABLOSU</h3>
           <div className="underline"></div>
-          <br /> <table>
+          <br /> 
+          <table>
           {createTable}
           </table>
         </div>
