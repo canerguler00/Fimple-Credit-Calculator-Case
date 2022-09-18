@@ -72,16 +72,18 @@ const Table = forwardRef((props, ref) => {
   }
 
   return (
-    <div>      
+    <div >      
       {isTable ? 
       (
-        <div className="table-content">
+        <div className="table-content" >
           <h3 className="table-title">GERİ ÖDEME PLANI TABLOSU</h3>
           <div className="underline"></div>
           <br /> 
+          <div className="table-container" >
           <table>
           {createTable}
           </table>
+          </div>
         </div>
       ) 
       : 

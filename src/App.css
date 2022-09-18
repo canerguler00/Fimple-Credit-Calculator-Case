@@ -154,7 +154,7 @@ body {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 90%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;  
 }
@@ -169,6 +169,7 @@ td, th {
   margin: 10px 25px;
   padding: 10px 0;
   border-radius: 5px;
+ 
 }
 .underline{
   border-top: 2px solid black;
@@ -177,5 +178,49 @@ td, th {
   margin-left: auto;
   margin-right: auto;
 }
+.table-container{
+  overflow-x: auto;
+  overflow-y: auto;
+}
 /* main component end */
 
+@media screen and (max-width: 650px) {
+  td, th {   
+    padding: 6px;  
+  }
+  html{
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 500px) {
+  td, th {   
+    padding: 4px;  
+  }
+  html{
+    font-size: 12px;
+  }
+  .content{
+    width: 370px;
+    height: 370px;
+  }
+  .content-item{
+    width: 370px;
+    height: 370px;
+  }
+}
+@media screen and (max-width: 400px) {
+  td, th {   
+    padding: 2px;  
+  }
+  html{
+    font-size: 10px;
+  }
+  .content{
+    width: 360px;
+    height: 360px;
+  }
+  .content-item{
+    width: 360px;
+    height: 360px;
+  }
+}
