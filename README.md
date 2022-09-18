@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with CREDIT CALCULATOR APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was developed for fimple react practicum. [Patika-Fimple React Practicum](https://www.patika.dev/bootcamp/fimple-react-practicum).
 
 ## Available Scripts
 
