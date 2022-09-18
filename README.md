@@ -39,3 +39,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ## State Management
 
 React hook useContext api is preferred for state management. [useContext](https://www.w3schools.com/react/react_usecontext.asp).
+
+## ScreenShots
+
+![ss1](https://user-images.githubusercontent.com/105972909/190889461-ead71740-cca3-4b00-b526-810232de854b.png)
+
+![ss2](https://user-images.githubusercontent.com/105972909/190889595-71d557b4-b8b0-4004-8761-bb737add5936.png)
+
+![ss3](https://user-images.githubusercontent.com/105972909/190889550-e66c55c4-840a-403c-8337-c2412bfe268c.png)
+
+
